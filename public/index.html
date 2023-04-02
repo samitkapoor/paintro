@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paintro</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="h-screen w-screen relative">
+    <canvas class="h-screen w-screen bg-bgColor absolute"> </canvas>
+    <div class="absolute right-10 bottom-10 flex gap-4">
+      <div
+        class="flex bg-customBlue-400 rounded-3xl overflow-hidden hidden"
+        id="menu"
+      >
+        <!-- trash icon -->
+        <div
+          class="h-14 w-14 flex items-center justify-center cursor-pointer hover:bg-customBlue-500 transition"
+        >
+          <svg
+            fill="#000000"
+            viewBox="1 1 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7"
+          >
+            <path
+              d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"
+            />
+          </svg>
+        </div>
+        <!-- download icon -->
+        <div
+          class="h-14 w-14 flex items-center justify-center cursor-pointer hover:bg-customBlue-500 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="1 1 24 24"
+            stroke-width="2"
+            stroke="#000000"
+            class="w-7 h-7"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+            />
+          </svg>
+        </div>
+        <!-- triangle icon -->
+        <div
+          class="h-14 w-14 flex items-center justify-center cursor-pointer hover:bg-customBlue-500 transition"
+        >
+          <svg
+            fill="#000000"
+            viewBox="1 1 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7"
+          >
+            <path
+              d="M21.87,19.29l-9-15.58a1,1,0,0,0-1.74,0l-9,15.58a1,1,0,0,0,0,1,1,1,0,0,0,.87.5H21a1,1,0,0,0,.87-.5A1,1,0,0,0,21.87,19.29Zm-17.14-.5L12,6.21l7.27,12.58Z"
+            />
+          </svg>
+        </div>
+        <!-- pen icon -->
+        <div
+          class="h-14 w-14 flex items-center justify-center cursor-pointer hover:bg-customBlue-500 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="1 1 24 24"
+            stroke-width="1.7"
+            stroke="#000000"
+            class="w-7 h-7"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+            />
+          </svg>
+        </div>
+      </div>
+      <!-- menu icon -->
+      <div
+        class="h-14 w-14 bg-customBlue-400 hover:bg-customBlue-500 transition rounded-3xl cursor-pointer flex items-center justify-center"
+        id="menu-btn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="1 1 24 24"
+          stroke-width="1.5"
+          stroke="#000000"
+          class="w-7 h-7"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
