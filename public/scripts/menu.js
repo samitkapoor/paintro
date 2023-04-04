@@ -30,6 +30,11 @@ tools.addEventListener("mouseleave", () => {
   hide(toolsCol);
 });
 
+tools.addEventListener("click", () => {
+  toolsCol.toggle("hidden");
+  toolsCol.toggle("flex");
+});
+
 toolsCol.addEventListener("mouseover", () => {
   show(toolsCol);
 });
