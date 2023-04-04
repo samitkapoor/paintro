@@ -1,3 +1,7 @@
-@tailwind utilities;
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
+
+.menu-icon {
+  @apply h-12 w-12 p-2.5 rounded-full bg-customBlue-400 hover:bg-customBlue-500 cursor-pointer;
+}
