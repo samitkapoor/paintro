@@ -55,6 +55,11 @@ shapes.addEventListener("mouseleave", () => {
   hide(shapesCol);
 });
 
+shapes.addEventListener("click", () => {
+  shapesCol.toggle("hidden");
+  shapesCol.toggle("flex");
+});
+
 shapesCol.addEventListener("mouseover", () => {
   show(shapesCol);
 });
