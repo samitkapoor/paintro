@@ -1,8 +1,11 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const allTools = document.querySelectorAll(".tool");
 
+let prevMouseX, prevMouseY, snapShot;
+let fillColor = false;
 let isDrawing = false;
-
+let selectedTool = "pen";
 let brushWidth = 2;
 
 // changing brush width
@@ -13,36 +16,75 @@ lineWidthRange.addEventListener("change", () => {
 
 let lineColor = "#ffffff";
 
-function sizeCanvas() {
+function resizeCanvas() {
   //assigning the height and width to the canvas
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
 }
 
 window.addEventListener("load", () => {
-  sizeCanvas();
+  resizeCanvas();
 });
 
 window.addEventListener("resize", () => {
-  sizeCanvas();
+  resizeCanvas();
 });
 
 // drawing on the canvas
-function startDrawing() {
+function startDrawing(e) {
   isDrawing = true;
+  prevMouseX = e.offsetX;
+  prevMouseY = e.offsetY;
   ctx.beginPath(); //creates a new path to draw
   ctx.lineWidth = brushWidth;
+  snapShot = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
 function stopDrawing() {
   isDrawing = false;
 }
 
+function drawRect(e) {
+  if (fillColor)
+    return ctx.fillRect(
+      e.offsetX,
+      e.offsetY,
+      prevMouseX - e.offsetX,
+      prevMouseY - e.offsetY
+    );
+  ctx.strokeRect(
+    e.offsetX,
+    e.offsetY,
+    prevMouseX - e.offsetX,
+    prevMouseY - e.offsetY
+  );
+}
+
+// function drawCircle(e) {
+//   let radius = Math.sqrt(
+//     Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseX - e.offsetY, 2)
+//   );
+//   ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+//   fillColor.checked ? ctx.fill() : ctx.stroke();
+// }
+
 function drawing(e) {
   if (!isDrawing) return;
-  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.putImageData(snapShot, 0, 0);
   ctx.strokeStyle = lineColor;
-  ctx.stroke();
+
+  if (
+    selectedTool === "pen" ||
+    selectedTool === "paint-brush" ||
+    selectedTool === "eraser"
+  ) {
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+  } else if (selectedTool === "rectangle") {
+    drawRect(e);
+  } else if (selectedTool === "circle") {
+    drawCircle(e);
+  }
 }
 
 canvas.addEventListener("mousemove", drawing);
@@ -71,4 +113,17 @@ paintBrush.addEventListener("click", () => {
 
 eraser.addEventListener("click", () => {
   lineColor = "#111111";
+});
+
+allTools.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    selectedTool = btn.id;
+    console.log(selectedTool);
+  });
+});
+
+const fill = document.getElementById("fill");
+
+fill.addEventListener("click", () => {
+  fillColor = !fillColor;
 });
