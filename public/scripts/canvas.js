@@ -5,6 +5,8 @@ let isDrawing = false;
 
 let brushWidth = 1;
 
+let lineColor = "#ffffff";
+
 function sizeCanvas() {
   //assigning the height and width to the canvas
   canvas.height = window.innerHeight;
@@ -33,7 +35,7 @@ function stopDrawing() {
 function drawing(e) {
   if (!isDrawing) return;
   ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.strokeStyle = "#ffffff";
+  ctx.strokeStyle = lineColor;
   ctx.stroke();
 }
 
@@ -47,11 +49,19 @@ canvas.addEventListener("mouseup", stopDrawing);
 // pen button
 const pen = document.getElementById("pen");
 const paintBrush = document.getElementById("paint-brush");
+const eraser = document.getElementById("eraser");
 
 pen.addEventListener("click", () => {
   brushWidth = 1;
+  lineColor = "#ffffff";
 });
 
 paintBrush.addEventListener("click", () => {
   brushWidth = 5;
+  lineColor = "#ffffff";
+});
+
+eraser.addEventListener("click", () => {
+  lineColor = "#111111";
+  brushWidth = 40;
 });
