@@ -18,6 +18,25 @@ function hide(element) {
   element.classList.add("hidden");
 }
 
+const lineWidth = document.getElementById("line-width");
+const lineWidthScale = document.getElementById("line-width-scale-box");
+
+lineWidth.addEventListener("mouseover", () => {
+  show(lineWidthScale);
+});
+
+lineWidthScale.addEventListener("mouseover", () => {
+  show(lineWidthScale);
+});
+
+lineWidth.addEventListener("mouseleave", () => {
+  hide(lineWidthScale);
+});
+
+lineWidthScale.addEventListener("mouseleave", () => {
+  hide(lineWidthScale);
+});
+
 const tools = document.getElementById("tools");
 const toolsCol = document.getElementById("tools-col");
 

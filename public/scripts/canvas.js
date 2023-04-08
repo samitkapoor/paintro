@@ -3,7 +3,13 @@ const ctx = canvas.getContext("2d");
 
 let isDrawing = false;
 
-let brushWidth = 1;
+let brushWidth = 2;
+
+// changing brush width
+const lineWidthRange = document.getElementById("line-width-range");
+lineWidthRange.addEventListener("change", () => {
+  brushWidth = lineWidthRange.value;
+});
 
 let lineColor = "#ffffff";
 
@@ -52,16 +58,17 @@ const paintBrush = document.getElementById("paint-brush");
 const eraser = document.getElementById("eraser");
 
 pen.addEventListener("click", () => {
-  brushWidth = 1;
+  lineWidthRange.value = brushWidth = 1;
   lineColor = "#ffffff";
+  lineWidthRange.max = "20";
 });
 
 paintBrush.addEventListener("click", () => {
-  brushWidth = 5;
+  lineWidthRange.value = brushWidth = 5;
   lineColor = "#ffffff";
+  lineWidthRange.max = "100";
 });
 
 eraser.addEventListener("click", () => {
   lineColor = "#111111";
-  brushWidth = 40;
 });
