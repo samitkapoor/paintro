@@ -10,16 +10,16 @@
     <script src="scripts/menu.js" defer></script>
     <script src="scripts/canvas.js" defer></script>
   </head>
-  <body class="h-screen w-screen relative">
+  <body class="h-screen w-screen relative flex items-center justify-center">
     <canvas id="canvas" class="bg-bgColor absolute"></canvas>
 
     <!-- menu -->
-    <div class="flex gap-4 items-end absolute bottom-10 right-10">
-      <div class="flex flex-col">
+    <div class="flex gap-4 items-end absolute bottom-10 overflow-visible">
+      <div class="flex flex-col overflow-visible">
         <!-- scale -->
         <div class="hidden pb-2" id="line-width-scale-box">
           <div
-            class="h-40 w-12 bg-customBlue-400 flex justify-center items-center rounded-full"
+            class="h-40 w-14 bg-gray-600 hover:bg-customBlue-500 transition opacity-75 flex justify-center items-center rounded-full"
           >
             <input
               type="range"
@@ -40,7 +40,7 @@
           />
         </div>
       </div>
-      <div class="hidden items-end gap-2 rounded-md overflow-hidden" id="menu">
+      <div class="hidden items-end gap-4 rounded-md overflow-visible" id="menu">
         <div class="menu-icon" id="download">
           <img
             class="object-contain"
@@ -58,7 +58,7 @@
         <div class="flex flex-col">
           <!-- shapes column -->
           <div
-            class="hidden flex-col gap-2 rounded-t-md overflow-hidden pb-2"
+            class="hidden flex-col gap-4 rounded-t-md overflow-hidden pb-2"
             id="shapes-col"
           >
             <div class="menu-icon tool" id="square">
@@ -102,7 +102,7 @@
         <div class="flex flex-col">
           <!-- tools column -->
           <div
-            class="hidden flex-col gap-2 pb-2 rounded-t-md overflow-hidden"
+            class="hidden flex-col gap-4 pb-2 rounded-t-md overflow-hidden"
             id="tools-col"
           >
             <div class="menu-icon tool" id="eraser">

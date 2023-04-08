@@ -528,10 +528,6 @@ video {
   bottom: 2.5rem;
 }
 
-.right-10 {
-  right: 2.5rem;
-}
-
 .flex {
   display: flex;
 }
@@ -548,8 +544,8 @@ video {
   height: 100vh;
 }
 
-.w-12 {
-  width: 3rem;
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-screen {
@@ -585,16 +581,16 @@ video {
   justify-content: center;
 }
 
-.gap-2 {
-  gap: 0.5rem;
-}
-
 .gap-4 {
   gap: 1rem;
 }
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .rounded-full {
@@ -615,9 +611,9 @@ video {
   background-color: rgb(17 17 17 / var(--tw-bg-opacity));
 }
 
-.bg-customBlue-400 {
+.bg-gray-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 178 255 / var(--tw-bg-opacity));
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .bg-green-400 {
@@ -634,22 +630,50 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 * {
   margin: 0px;
   padding: 0px;
 }
 
 .menu-icon {
-  height: 3rem;
-  width: 3rem;
+  height: 3.5rem;
+  width: 3.5rem;
   cursor: pointer;
   border-radius: 9999px;
   --tw-bg-opacity: 1;
-  background-color: rgb(0 178 255 / var(--tw-bg-opacity));
-  padding: 0.625rem;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  padding: 0.875rem;
+  opacity: 0.75;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: #fff;
+  --tw-shadow: var(--tw-shadow-colored);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .menu-icon:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 146 209 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-customBlue-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 146 209 / var(--tw-bg-opacity));
 }
