@@ -69,6 +69,28 @@ function drawCircle(e) {
   fillColor ? ctx.fill() : ctx.stroke();
 }
 
+function drawSquare(e) {
+  let a = prevMouseX - e.offsetX;
+  let b = prevMouseY - e.offsetY;
+
+  let side = Math.min(a, b);
+
+  ctx.beginPath();
+  ctx.moveTo(prevMouseX, prevMouseY);
+
+  if (fillColor) return ctx.fillRect(e.offsetX, e.offsetY, side, side);
+  ctx.strokeRect(e.offsetX, e.offsetY, side, side);
+}
+
+function drawTriangle(e) {
+  ctx.beginPath();
+  ctx.moveTo(prevMouseX, prevMouseY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.lineTo(prevMouseX * 2 - e.offsetX, e.offsetY);
+  ctx.closePath();
+  fillColor ? ctx.fill() : ctx.stroke();
+}
+
 function drawing(e) {
   if (!isDrawing) return;
   ctx.putImageData(snapShot, 0, 0);
@@ -86,6 +108,10 @@ function drawing(e) {
     drawRect(e);
   } else if (selectedTool === "circle") {
     drawCircle(e);
+  } else if (selectedTool === "square") {
+    drawSquare(e);
+  } else if (selectedTool === "triangle") {
+    drawTriangle(e);
   }
 }
 
@@ -130,4 +156,10 @@ const fill = document.getElementById("fill");
 fill.addEventListener("click", () => {
   fillColor = !fillColor;
   console.log(fillColor);
+});
+
+const trash = document.getElementById("trash");
+
+trash.addEventListener("click", () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
