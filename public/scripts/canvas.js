@@ -8,6 +8,11 @@ let isDrawing = false;
 let selectedTool = "pen";
 let brushWidth = 2;
 
+function setBackground() {
+  ctx.fillStyle = "#000000";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
 // changing brush width
 const lineWidthRange = document.getElementById("line-width-range");
 lineWidthRange.addEventListener("change", () => {
@@ -24,6 +29,7 @@ function resizeCanvas() {
 
 window.addEventListener("load", () => {
   resizeCanvas();
+  setBackground();
 });
 
 window.addEventListener("resize", () => {
@@ -151,15 +157,24 @@ allTools.forEach((btn) => {
   });
 });
 
-const fill = document.getElementById("fill");
+const fill = document.getElementById("fill"); //to fill color inside the shapes
 
 fill.addEventListener("click", () => {
   fillColor = !fillColor;
   console.log(fillColor);
 });
 
-const trash = document.getElementById("trash");
+const trash = document.getElementById("trash"); //to clear all the art on the canvas
 
 trash.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+const download = document.getElementById("download"); //to download the art created by the artist
+
+download.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.download = `${Date.now()}.jpg`;
+  link.href = canvas.toDataURL();
+  link.click();
 });
