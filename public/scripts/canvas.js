@@ -60,18 +60,20 @@ function drawRect(e) {
   );
 }
 
-// function drawCircle(e) {
-//   let radius = Math.sqrt(
-//     Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseX - e.offsetY, 2)
-//   );
-//   ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
-//   fillColor.checked ? ctx.fill() : ctx.stroke();
-// }
+function drawCircle(e) {
+  ctx.beginPath();
+  let radius = Math.sqrt(
+    Math.pow(prevMouseX - e.offsetX, 2) + Math.pow(prevMouseY - e.offsetY, 2)
+  );
+  ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+  fillColor ? ctx.fill() : ctx.stroke();
+}
 
 function drawing(e) {
   if (!isDrawing) return;
   ctx.putImageData(snapShot, 0, 0);
   ctx.strokeStyle = lineColor;
+  ctx.fillStyle = lineColor;
 
   if (
     selectedTool === "pen" ||
@@ -113,6 +115,7 @@ paintBrush.addEventListener("click", () => {
 
 eraser.addEventListener("click", () => {
   lineColor = "#111111";
+  lineWidthRange.max = "100";
 });
 
 allTools.forEach((btn) => {
@@ -126,4 +129,5 @@ const fill = document.getElementById("fill");
 
 fill.addEventListener("click", () => {
   fillColor = !fillColor;
+  console.log(fillColor);
 });
