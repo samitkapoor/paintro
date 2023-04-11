@@ -7,5 +7,5 @@
 }
 
 .menu-icon {
-  @apply h-14 w-14 p-3.5 rounded-full bg-gray-800 opacity-75 hover:bg-customBlue-500 cursor-pointer shadow-md shadow-white transition;
+  @apply h-[56px] w-[56px] p-3.5  bg-gray-800 opacity-75 hover:bg-customBlue-500 cursor-pointer  transition;
 }

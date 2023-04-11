@@ -1,88 +1,28 @@
-const menuDrawer = document.getElementById("menu-drawer");
-const menu = document.getElementById("menu");
-
-// opens and closes the doors
-menuDrawer.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
-  menu.classList.toggle("flex");
-});
-
-// to show or hide an element from the screen
-function show(element) {
-  element.classList.remove("hidden");
-  element.classList.add("flex");
-}
-
-function hide(element) {
-  element.classList.remove("flex");
-  element.classList.add("hidden");
-}
-
+const scale = document.getElementById("scale");
 const lineWidth = document.getElementById("line-width");
-const lineWidthScale = document.getElementById("line-width-scale-box");
+const lineWidthScaleBox = document.getElementById("line-width-scale-box");
+const lineWidthRange = document.getElementById("line-width-range");
 
-lineWidth.addEventListener("mouseover", () => {
-  show(lineWidthScale);
-});
+let isScaleOpen = false;
 
-lineWidthScale.addEventListener("mouseover", () => {
-  show(lineWidthScale);
-});
+const showHideScale = () => {
+  if (!isScaleOpen) {
+    scale.style.width = "210px";
+    isScaleOpen = true;
+  } else {
+    scale.style.width = "56px";
+    isScaleOpen = false;
+  }
+  lineWidth.classList.toggle("rounded-full");
+  lineWidth.classList.toggle("rounded-l-full");
+  lineWidthScaleBox.classList.toggle("hidden");
+  lineWidthScaleBox.classList.toggle("flex");
+};
 
-lineWidth.addEventListener("mouseleave", () => {
-  hide(lineWidthScale);
-});
+lineWidth.addEventListener("click", showHideScale);
+lineWidthScaleBox.addEventListener("click", showHideScale);
 
-lineWidthScale.addEventListener("mouseleave", () => {
-  hide(lineWidthScale);
-});
-
-const tools = document.getElementById("tools");
-const toolsCol = document.getElementById("tools-col");
-
-// to show tools column on hovering tools icon
-tools.addEventListener("mouseover", () => {
-  show(toolsCol);
-});
-
-tools.addEventListener("mouseleave", () => {
-  hide(toolsCol);
-});
-
-tools.addEventListener("click", () => {
-  toolsCol.toggle("hidden");
-  toolsCol.toggle("flex");
-});
-
-toolsCol.addEventListener("mouseover", () => {
-  show(toolsCol);
-});
-
-toolsCol.addEventListener("mouseleave", () => {
-  hide(toolsCol);
-});
-
-const shapes = document.getElementById("shapes");
-const shapesCol = document.getElementById("shapes-col");
-
-// to show shapes column on hovering columns icon
-shapes.addEventListener("mouseover", () => {
-  show(shapesCol);
-});
-
-shapes.addEventListener("mouseleave", () => {
-  hide(shapesCol);
-});
-
-shapes.addEventListener("click", () => {
-  shapesCol.toggle("hidden");
-  shapesCol.toggle("flex");
-});
-
-shapesCol.addEventListener("mouseover", () => {
-  show(shapesCol);
-});
-
-shapesCol.addEventListener("mouseleave", () => {
-  hide(shapesCol);
+lineWidthRange.addEventListener("click", (e) => {
+  // to prevent bubbling
+  e.stopImmediatePropagation();
 });

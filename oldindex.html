@@ -1,0 +1,132 @@
+<!-- menu -->
+<div class="flex gap-4 items-end overflow-visible mb-3">
+  <div class="flex overflow-hidden items-center w-56" id="scale">
+    <!-- line-width icon -->
+    <div class="menu-icon rounded-l-full" id="line-width">
+      <img
+        class="object-contain"
+        src="../assets/icons/line-width.png"
+        alt="Line Width"
+      />
+    </div>
+    <!-- scale -->
+    <div class="flex pb-2" id="line-width-scale-box">
+      <div
+        class="h-14 bg-gray-600 hover:bg-customBlue-500 transition opacity-75 flex justify-center items-center rounded-full"
+      >
+        <input
+          type="range"
+          name="line-width"
+          id="line-width-range"
+          value="2"
+          max="20"
+          class="bg-green-400 cursor-pointer"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="hidden items-end gap-4 rounded-md overflow-visible" id="menu">
+    <div class="menu-icon" id="download">
+      <img
+        class="object-contain"
+        src="../assets/icons/download.png"
+        alt="Menu Icon"
+      />
+    </div>
+    <div class="menu-icon" id="trash">
+      <img
+        class="object-contain"
+        src="../assets/icons/trash.png"
+        alt="Menu Icon"
+      />
+    </div>
+    <div class="flex flex-col">
+      <!-- shapes column -->
+      <div
+        class="hidden flex-col gap-4 rounded-t-md overflow-hidden pb-2"
+        id="shapes-col"
+      >
+        <div class="menu-icon tool" id="square">
+          <img
+            class="object-contain"
+            src="../assets/icons/square.png"
+            alt="Square"
+          />
+        </div>
+        <div class="menu-icon tool" id="rectangle">
+          <img
+            class="object-contain"
+            src="../assets/icons/rectangle.png"
+            alt="Rectangle"
+          />
+        </div>
+        <div class="menu-icon tool" id="circle">
+          <img
+            class="object-contain"
+            src="../assets/icons/circle.png"
+            alt="Circle"
+          />
+        </div>
+        <div class="menu-icon tool" id="triangle">
+          <img
+            class="object-contain"
+            src="../assets/icons/triangle.png"
+            alt="Triangle"
+          />
+        </div>
+      </div>
+      <!-- /shapes column -->
+      <div class="menu-icon" id="shapes">
+        <img
+          class="object-contain"
+          src="../assets/icons/triangle.png"
+          alt="Menu Icon"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <!-- tools column -->
+      <div
+        class="hidden flex-col gap-4 pb-2 rounded-t-md overflow-hidden"
+        id="tools-col"
+      >
+        <div class="menu-icon tool" id="eraser">
+          <img
+            class="object-contain"
+            src="../assets/icons/eraser.png"
+            alt="Eraser"
+          />
+        </div>
+        <div class="menu-icon" id="fill">
+          <img
+            class="object-contain"
+            src="../assets/icons/fill.png"
+            alt="Fill"
+          />
+        </div>
+        <div class="menu-icon tool" id="paint-brush">
+          <img
+            class="object-contain"
+            src="../assets/icons/paint-brush.png"
+            alt="Paint Brush"
+          />
+        </div>
+        <div class="menu-icon tool" id="pen">
+          <img class="object-contain" src="../assets/icons/pen.png" alt="Pen" />
+        </div>
+      </div>
+      <!-- /tools column -->
+      <div class="menu-icon" id="tools">
+        <img class="object-contain" src="../assets/icons/pen.png" alt="Pen" />
+      </div>
+    </div>
+  </div>
+  <!-- menu drawer icon -->
+  <div class="menu-icon rounded-full" id="menu-drawer">
+    <img
+      class="object-contain"
+      src="../assets/icons/paintbrush.png"
+      alt="Menu Icon"
+    />
+  </div>
+</div>

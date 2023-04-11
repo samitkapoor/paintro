@@ -23,7 +23,7 @@ let lineColor = "#ffffff";
 
 function resizeCanvas() {
   //assigning the height and width to the canvas
-  canvas.height = window.innerHeight;
+  canvas.height = window.innerHeight - (10 / 100) * window.innerHeight;
   canvas.width = window.innerWidth;
 }
 
