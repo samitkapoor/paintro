@@ -2,11 +2,11 @@ const menu = document.getElementById("menu");
 const scale = document.getElementById("scale");
 const lineWidth = document.getElementById("line-width");
 const lineWidthScaleBox = document.getElementById("line-width-scale-box");
-const lineWidthRange = document.getElementById("line-width-range");
-var fill = document.getElementById("fill");
+const lWR = document.getElementById("line-width-range");
+var fillPaint = document.getElementById("fill");
 
 let isScaleOpen = false;
-let isFill = false;
+let isFillPaint = false;
 
 const showHideScale = () => {
   if (!isScaleOpen) {
@@ -29,17 +29,17 @@ const showHideScale = () => {
 lineWidth.addEventListener("click", showHideScale);
 lineWidthScaleBox.addEventListener("click", showHideScale);
 
-lineWidthRange.addEventListener("click", (e) => {
+lWR.addEventListener("click", (e) => {
   // to prevent bubbling
   e.stopImmediatePropagation();
 });
 
-fill.addEventListener("click", () => {
-  if (!isFill) {
-    fill.style.backgroundColor = "blue";
-    isFill = true;
+fillPaint.addEventListener("click", () => {
+  if (!isFillPaint) {
+    fillPaint.style.backgroundColor = "blue";
+    isFillPaint = true;
   } else {
-    fill.style.backgroundColor = "";
-    isFill = false;
+    fillPaint.style.backgroundColor = "";
+    isFillPaint = false;
   }
 });

@@ -9,7 +9,7 @@ let selectedTool = "pen";
 let brushWidth = 2;
 
 function setBackground() {
-  ctx.fillStyle = "#000000";
+  ctx.fillStyle = "#111111";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -153,7 +153,6 @@ eraser.addEventListener("click", () => {
 allTools.forEach((btn) => {
   btn.addEventListener("click", () => {
     selectedTool = btn.id;
-    console.log(selectedTool);
   });
 });
 
@@ -161,13 +160,13 @@ const fill = document.getElementById("fill"); //to fill color inside the shapes
 
 fill.addEventListener("click", () => {
   fillColor = !fillColor;
-  console.log(fillColor);
 });
 
 const trash = document.getElementById("trash"); //to clear all the art on the canvas
 
 trash.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  setBackground();
 });
 
 const download = document.getElementById("download"); //to download the art created by the artist
