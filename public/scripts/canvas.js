@@ -2,6 +2,12 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const allTools = document.querySelectorAll(".tool");
 
+let lineColor = "#ffffff";
+var selectedColor = document.getElementById("selected-color");
+selectedColor.addEventListener("change", () => {
+  lineColor = selectedColor.value;
+});
+
 let prevMouseX, prevMouseY, snapShot;
 let fillColor = false;
 let isDrawing = false;
@@ -18,8 +24,6 @@ const lineWidthRange = document.getElementById("line-width-range");
 lineWidthRange.addEventListener("change", () => {
   brushWidth = lineWidthRange.value;
 });
-
-let lineColor = "#ffffff";
 
 function resizeCanvas() {
   //assigning the height and width to the canvas

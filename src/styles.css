@@ -9,3 +9,21 @@
 .menu-icon {
   @apply h-[56px] w-[56px] p-3.5  bg-gray-800 opacity-75 hover:bg-customBlue-500 cursor-pointer  transition;
 }
+
+.colormenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colormenu input[type="color"] {
+  @apply h-[56px] w-[56px] cursor-pointer  border-none bg-transparent appearance-none mb-3;
+}
+
+.colormenu input[type="color"]::-webkit-color-swatch {
+  @apply h-[56px] w-[56px] rounded-full border-0 outline-none;
+}
+
+.colormenu input[type="color"]::-moz-color-swatch {
+  @apply h-[56px] w-[56px] rounded-full border-0 outline-none;
+}

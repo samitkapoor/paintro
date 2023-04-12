@@ -536,6 +536,10 @@ video {
   height: 3.5rem;
 }
 
+.h-\[56px\] {
+  height: 56px;
+}
+
 .h-\[90vh\] {
   height: 90vh;
 }
@@ -626,9 +630,21 @@ video {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-3\.5 {
+  padding: 0.875rem;
 }
 
 .pl-2 {
@@ -688,6 +704,42 @@ video {
 .menu-icon:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 146 209 / var(--tw-bg-opacity));
+}
+
+.colormenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colormenu input[type="color"] {
+  margin-bottom: 0.75rem;
+  height: 56px;
+  width: 56px;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-style: none;
+  background-color: transparent;
+}
+
+.colormenu input[type="color"]::-webkit-color-swatch {
+  height: 56px;
+  width: 56px;
+  border-radius: 9999px;
+  border-width: 0px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.colormenu input[type="color"]::-moz-color-swatch {
+  height: 56px;
+  width: 56px;
+  border-radius: 9999px;
+  border-width: 0px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .hover\:bg-customBlue-700:hover {
