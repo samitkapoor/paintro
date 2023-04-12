@@ -130,6 +130,7 @@ canvas.addEventListener("mouseup", stopDrawing);
 // buttons
 // pen button
 const pen = document.getElementById("pen");
+pen.style.backgroundColor = "blue";
 const paintBrush = document.getElementById("paint-brush");
 const eraser = document.getElementById("eraser");
 
@@ -152,7 +153,12 @@ eraser.addEventListener("click", () => {
 
 allTools.forEach((btn) => {
   btn.addEventListener("click", () => {
+    var element = document.getElementById(selectedTool);
+    element.style.backgroundColor = "";
     selectedTool = btn.id;
+    var selectedElement = document.getElementById(selectedTool);
+    selectedElement.style.backgroundColor = "blue";
+    console.log(selectedTool);
   });
 });
 
